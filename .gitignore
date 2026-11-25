@@ -1,0 +1,122 @@
+﻿
+# ==================================================
+# .NET BUILD OUTPUT
+# ==================================================
+
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Aa]rtifacts/
+
+# ==================================================
+# VISUAL STUDIO
+# ==================================================
+
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ==================================================
+# RIDER / RESHARPER
+# ==================================================
+
+.idea/
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# ==================================================
+# NUGET
+# ==================================================
+
+*.nupkg
+*.snupkg
+.nuget/
+
+# ==================================================
+# TEST RESULTS AND COVERAGE
+# ==================================================
+
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+coverage/
+coverage.*
+*.coverage
+*.coveragexml
+
+# ==================================================
+# LOGS AND TEMPORARY FILES
+# ==================================================
+
+*.log
+*.tmp
+*.temp
+*.bak
+
+# ==================================================
+# ENVIRONMENT AND SECRETS
+# ==================================================
+
+.env
+.env.*
+!.env.example
+secrets.json
+appsettings.Development.json
+appsettings.*.local.json
+
+# ==================================================
+# OPERATING SYSTEM
+# ==================================================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==================================================
+# PUBLISH OUTPUT
+# ==================================================
+
+publish/
+```
+
+## Algumas decisões importantes
+
+**1. Por que ignorar `.nupkg` e `.snupkg`?**
+
+São artefatos gerados durante o empacotamento da biblioteca. Não devem ser versionados no Git. A publicação deve ocorrer no feed NuGet.
+
+**2. Por que manter `.snupkg` ignorado?**
+
+É o pacote de símbolos de depuração, separado do pacote NuGet convencional.
+
+**3. Por que ignorar `bin/` e `obj/`?**
+
+São diretórios gerados pelo MSBuild durante o processo de compilação.
+
+**4. Por que ignorar `appsettings.Development.json`?**
+
+Para evitar versionamento acidental de configurações locais e credenciais.
+
+---
+
+## Estrutura esperada do repositório
+
+```text
+DeviceCheck.SharedKernel/
+│
+├── .git/
+├── .gitignore
+├── README.md
+├── LICENSE
+├── DeviceCheck.SharedKernel.sln
+│
+└── src/
+    └── DeviceCheck.SharedKernel/
+        ├── DeviceCheck.SharedKernel.csproj
+        └── ...
+```
+
+**Minha recomendação:** mantenha o `.gitignore` na raiz do repositório, não dentro da pasta `src`. Assim, ele protege tanto o projeto quanto os artefatos gerados em todo o repositório.

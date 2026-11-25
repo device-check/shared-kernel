@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>shared_kernel</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+	<PackageId>device-check.shared-kernel</PackageId>
+	<Version>1.0.0</Version>
+	<Title>DeviceCheck Shared Kernel</Title>
+	<Authors>Rafael Ruan</Authors>
+	<Company>DeviceCheck</Company>
+	<Description>
+		Shared Kernel containing common concepts and abstractions
+		shared across DeviceCheck microservices.
+	</Description> 
+	
+  </PropertyGroup>
+
+</Project>
