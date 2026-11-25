@@ -33,7 +33,7 @@ jobs:
         run: dotnet test --configuration Release --no-build
 
       - name: Pack NuGet
-        run: dotnet pack src/DeviceCheck.SharedKernel/DeviceCheck.SharedKernel.csproj --configuration Release --no-build --output ./artifacts
+        run: dotnet pack shared-kernel/shared-kernel.csproj --configuration Release --no-build --output ./artifacts
 
       - name: NuGet login (OIDC)
         uses: NuGet/login@v1
