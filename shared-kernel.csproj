@@ -14,8 +14,12 @@
 	<Description>
 		Shared Kernel containing common concepts and abstractions
 		shared across DeviceCheck microservices.
-	</Description> 
+	</Description>	
 	
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Exceptions\InfrastructureLayerExceptions\" />
+  </ItemGroup>
 
 </Project>
